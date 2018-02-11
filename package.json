@@ -30,7 +30,6 @@
     "type": "git",
 
     "url": "git+https://github.com/BradGamez/Abuse-Bot/.git"
-
   },
 
   "keywords": [
@@ -56,13 +55,13 @@
   
   "dependencies": {
 
-    "discord.js": "^11.1.0",
+    "discord.js": "^11.3.0",
 
     "opusscript": "0.0.6",
 
     "simple-youtube-api": "^5.0.1",
 
-    "ytdl-core": "^0.19.0",
+    "ytdl-core": "^0.20.1",
 
     "cleverbot.io": "^1.0.4"
     
