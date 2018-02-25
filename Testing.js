@@ -993,19 +993,7 @@ bot.on('message', message => {
                                             }
                                         })
                                         
-                                        var cleverbot = require("cleverbot.io");
-                                        var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                         
-                                        
-                                        bot.on('message', message => {
-                                            if(message.channel.name === "abusecleverbot" || message.channel.id === "410577975616995340") {
-                                            if(message.author.bot) return;
-                                            talkbot.ask(message.content, function (err, response) {
-                                            message.channel.send(response); 
-					    
-                                          });
-					    }
-                                        });
                                
 
 bot.login(process.env.BOT_TOKEN)
