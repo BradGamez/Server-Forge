@@ -270,7 +270,6 @@ bot.on('message', message => {
                     var embed = new Discord.RichEmbed();
                     if (message.author.bot) return;
                     embed.setColor('BLUE');
-
                     embed.setDescription(g);
                   message.channel.send({embed});
                 }
@@ -308,13 +307,13 @@ bot.on('message', message => {
 var cleverbot = require("cleverbot.io");
 var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                         
-                                        
                                         bot.on('message', message => {
                                             if(message.channel.name === "abusecleverbot" || message.channel.id === "410577975616995340") {
                                             if(message.author.bot) return;
+					bot.create(function (err, session) {
                                          talkbot.ask(message.content, function (err, response) {
                                        message.channel.send(response); 
-					    
+					 });  
                                           });
 					    }
                                         });
