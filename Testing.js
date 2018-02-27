@@ -305,6 +305,20 @@ bot.on('message', message => {
 
             });
 
+var cleverbot = require("cleverbot.io");
+var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
+                                        
+                                        
+                                        bot.on('message', message => {
+                                            if(message.channel.name === "abusecleverbot" || message.channel.id === "410577975616995340") {
+                                            if(message.author.bot) return;
+                                         talkbot.ask(message.content, function (err, response) {
+                                       message.channel.send(response); 
+					    
+                                          });
+					    }
+                                        });
+
              bot.on('message' , async message => {
                 var embed = new Discord.RichEmbed();                                                        
                 if (message.content.toLowerCase() === prefix + "ping") {
