@@ -306,15 +306,14 @@ bot.on('message', message => {
 
 var cleverbot = require("cleverbot.io");
 var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
-                                        
+                                        talkbot.setNick("Abuse")
                                         bot.on('message', message => {
                                             if(message.channel.name === "abusecleverbot" || message.channel.id === "410577975616995340") {
                                             if(message.author.bot) return;
-					bot.setNick("Abuse")
-					bot.create(function (err, session) {
+					talkbot.create(function (err, session) {
                                          talkbot.ask(message.content, function (err, response) {
-					 });  
 					message.channel.send(response);
+					});
                                           });
 					    }
                                         });
