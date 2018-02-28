@@ -865,8 +865,7 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                         embed.setDescription("Please tag a user");
                                 
                                       }
-                                
-                                      if (args.length >= 2 && user && !msg.content.startsWith(prefix + 'removerole <@')) { //checks if a user is tagged there are more than enough arguments and the user is not after rr
+                                                                      if (args.length >= 2 && user && !msg.content.startsWith(prefix + 'removerole <@')) { //checks if a user is tagged there are more than enough arguments and the user is not after rr
                                 
                                         embed.setDescription("Invalid format");
                                 
@@ -905,7 +904,7 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                     var args = message.content.split(' '); var d = " "; for(var i = 1; i < args.length; i++){ d = d+" "+args[i]; }
                                    if (message.content.startsWith(prefix + 'idea')) { 
                                         var embed = new Discord.RichEmbed();
-                                        if (args.length >= 1) {
+                                        if (args.length >= 2) {
                                         message.channel.send('Your idea has been logged and will be looked over by bot staff.')
                                         if (message.author.bot) return;
                                         embed.setColor('BLUE');
