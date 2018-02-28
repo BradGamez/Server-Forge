@@ -887,8 +887,7 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                 bot.on('message', msg => {
                                     if(msg.author.bot) return; //returns if the sender of the message is a bot
                                     if(msg.content.toLowerCase().startsWith(prefix + 'listroles')){        
-                                        var roleList = msg.guild.roles.sort((a, b) => a.calculatedPosition - b.calculatedPosition).map(r => r.name).reverse();//sorts the collection by calculatedPosition then maps it to an array with the name element and then reverses the array
-                                        var str = "";
+                                        var roleList = msg.guild.roles.sort((a, b) => a.calculatedPosition - b.calculatedPosition).map(r => r.name).reverse();//sorts the collection by calculatedPosition then maps it to an array with the name element and then reverses the array                                        var str = "";
                                         for(var i = 0; i<roleList.length-1;i++)//goes through the roleList array and adds every element but the @everyone rank to the string
                                         {
                                             str = str+roleList[i]+', ';
@@ -906,14 +905,14 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                     var args = message.content.split(' '); var d = " "; for(var i = 1; i < args.length; i++){ d = d+" "+args[i]; }
                                    if (message.content.startsWith(prefix + 'idea')) { 
                                         var embed = new Discord.RichEmbed();
-                                        if (args.length === 1) {
+                                        if (args.length >= 1) {
                                         message.channel.send('Your idea has been logged and will be looked over by bot staff.')
                                         if (message.author.bot) return;
                                         embed.setColor('BLUE');
                                         embed.setDescription('Guild Name : ' + guild.name + '\nGuild ID : ' + guild.id + '\nMessage Author : ' + message.author.username + '#' + message.author.discriminator + '\nMessage Author ID : ' + message.author.id + '\nMessage Author Role : ' + message.member.highestRole.name + '\nGuild Owner : ' + guild.owner.user.username + '#' + guild.owner.user.discriminator + '\nGuild Channel : ' + message.channel.name + '\nGuild Members : ' + guild.memberCount + '\nIdea : ' + d)
                                         bot.channels.get('358754355752730625').send({embed});
                                         }
-                                    if(args.length !== 1){
+                                    if(args.length <= 1){
                                         embed.setColor('RED')
                                         embed.setDescription("Please enter vaule for idea\n**-idea <text>**")
                                         message.channel.send({embed})
