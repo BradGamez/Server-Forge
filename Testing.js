@@ -904,13 +904,20 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                     var guild = message.guild;
                                     var author = message.author;
                                     var args = message.content.split(' '); var d = " "; for(var i = 1; i < args.length; i++){ d = d+" "+args[i]; }
-                                    if (message.content.startsWith(prefix + 'idea')) { 
+                                   if (message.content.startsWith(prefix + 'idea')) { 
                                         var embed = new Discord.RichEmbed();
+                                        if (args.length === 1) {
                                         message.channel.send('Your idea has been logged and will be looked over by bot staff.')
                                         if (message.author.bot) return;
                                         embed.setColor('BLUE');
                                         embed.setDescription('Guild Name : ' + guild.name + '\nGuild ID : ' + guild.id + '\nMessage Author : ' + message.author.username + '#' + message.author.discriminator + '\nMessage Author ID : ' + message.author.id + '\nMessage Author Role : ' + message.member.highestRole.name + '\nGuild Owner : ' + guild.owner.user.username + '#' + guild.owner.user.discriminator + '\nGuild Channel : ' + message.channel.name + '\nGuild Members : ' + guild.memberCount + '\nIdea : ' + d)
                                         bot.channels.get('358754355752730625').send({embed});
+                                        }
+                                    if(args.length !== 1){
+                                        embed.setColor('RED')
+                                        embed.setDescription("Please enter vaule for idea\n**-idea <text>**")
+                                        message.channel.send({embed})
+                                    }
                                     }
                                     if(message.author.id === "335893092756488205"){
                                     if(message.content.startsWith(prefix + "prefix1")) {
