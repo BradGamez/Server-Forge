@@ -913,7 +913,7 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                         }
                                     if(args.length <= 1){
                                         embed.setColor('RED')
-                                        embed.setDescription("Please enter vaule for idea\n**-idea <text>**")
+                                        embed.setDescription("Please enter vaule for idea\n`-idea <text>`")
                                         message.channel.send({embed})
                                     }
                                     }
