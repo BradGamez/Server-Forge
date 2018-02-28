@@ -951,7 +951,7 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
 
                                 bot.on('ready', () => {
                                     function oof(){
-                                        bot.channels.get(config.autochannelid).send(config.automessage)
+                                        bot.channels.get(config.autochannelid).send("**Check out our website**\n<https://bradgamezcorporation.weebly.com>")
                                     
                                     } 
         
