@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const fs = require('fs')
+const fs = require('fs');
+const math = require('mathjs');
 const config = require("./config.json");
 var prefix = config.prefix1
 
@@ -237,6 +238,19 @@ bot.on('message', message => {
     embed.setColor('#02f5e1')
     message.channel.send({embed}); return;
     } 
+});
+
+bot.on('message', message => {
+  var guild = message.guild;
+  var author = message.author;
+  var args = message.content.split(' '); var g = " "; for(var i = 1; i < args.length; i++){ g = g+" "+args[i]; }
+  if (message.content.toLowerCase().startsWith(prefix + 'cal')) {
+      var embed = new Discord.RichEmbed();
+      if (message.author.bot) return;
+      embed.setColor('BLUE');
+      embed.setDescription("**Preview** : " + g + "\n\n**Answer** : " + math.eval(g));
+    message.channel.send({embed});
+  }
 });
 
     bot.on('message', message => {
