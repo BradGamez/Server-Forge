@@ -240,18 +240,6 @@ bot.on('message', message => {
     } 
 });
 
-bot.on('message', message => {
-  var guild = message.guild;
-  var author = message.author;
-  var args = message.content.split(' '); var g = " "; for(var i = 1; i < args.length; i++){ g = g+" "+args[i]; }
-  if (message.content.toLowerCase().startsWith(prefix + 'cal')) {
-      var embed = new Discord.RichEmbed();
-      if (message.author.bot) return;
-      embed.setColor('BLUE');
-      embed.setDescription("**Preview** : " + g + "\n\n**Answer** : " + math.eval(g));
-    message.channel.send({embed});
-  }
-});
 
     bot.on('message', message => {
         let guild = message.guild
