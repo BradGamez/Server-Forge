@@ -885,20 +885,7 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                                 
                                 });
 
-                                bot.on('message', msg => {
-                                    if(msg.author.bot) return; //returns if the sender of the message is a bot
-                                    if(msg.content.toLowerCase().startsWith(prefix + 'listroles')){        
-                                        var roleList = msg.guild.roles.sort((a, b) => a.calculatedPosition - b.calculatedPosition).map(r => r.name).reverse();//sorts the collection by calculatedPosition then maps it to an array with the name element and then reverses the array                                        var str = "";
-                                        for(var i = 0; i<roleList.length-1;i++)//goes through the roleList array and adds every element but the @everyone rank to the string
-                                        {
-                                            str = str+roleList[i]+', ';
-                                        }
-                                        var embed = new Discord.RichEmbed();
-                                        embed.setColor('49c5ff');
-                                        embed.setDescription(str.substring(0, str.length-2));//substring removes the trailing ', ' from the string
-                                        msg.channel.send(embed);
-                                    }
-                                });
+                           	
 
                                 bot.on('message', message => {
                                     var guild = message.guild;
