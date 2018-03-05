@@ -5,6 +5,24 @@ const math = require('mathjs');
 const config = require("./config.json");
 var prefix = config.prefix1
 
+
+
+
+
+bot.on('message', message => {
+  var guild = message.guild;
+  var author = message.author;
+  if (message.content.toLowerCase().startsWith(prefix + 'partner')) {
+      var embed = new Discord.RichEmbed();
+      if (message.author.bot) return;
+      embed.setTitle('Partnerships')
+      embed.setColor('BLUE');
+      embed.setDescription('**#1 Partner :first_place:**\n[BradGamez Corpation](https://discord.gg/ZzhXzzd)\n\n**#2 Partner :second_place:**\n[TMG Network](​discord.gg/DK8WW8c)');
+      embed.setFooter('Join Offical Abuse Discord for partnership info. Link found by doing -invite')
+    message.channel.send({embed});
+  }
+});
+
 bot.on('message', async message => { 
     if ( message.content.toLowerCase() === prefix + 'shutdown') {
     if (message.author.bot) return; {
