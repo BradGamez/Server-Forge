@@ -686,10 +686,9 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                         var gamez = ['over ' + bot.guilds.size + " Servers", prefix + "help || " + prefix + 'invite'];
                         let count = 0;
                         function oof(){
-                        if(count > gamez.length - 1) count = 0;
                         bot.user.setPresence({game: {name: "over the puppies | -help", type: 'WATCHING'}});
                         }
-                        setInterval(oof, 600000);
+                        setInterval(oof, 3600000);
                         });
 
 
