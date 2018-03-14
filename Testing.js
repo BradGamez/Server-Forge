@@ -687,7 +687,7 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                         let count = 0;
                         function oof(){
                         if(count > gamez.length - 1) count = 0;
-                        bot.user.setPresence({game: {name: "${gamez[count++]}", type: 'WATCHING'}});
+                        bot.user.setPresence({game: {name: gamez[count++], type: 'WATCHING'}});
                         }
                         setInterval(oof, 600000);
                         });
