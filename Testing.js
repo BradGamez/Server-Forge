@@ -415,7 +415,24 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                         }
                 });
 
+bot.on('message', message => {
+  var guild = message.guild;
+  var author = message.author;
+  var embed = new Discord.RichEmbed();  
+  var args = message.content.split(' '); var g = " "; for(var i = 1; i < args.length; i++){ g = g+" "+args[i]; }
+  if (message.content.toLowerCase().startsWith(prefix + 'cal')) {
+      try {
+    if (message.author.bot) return;
+    embed.setColor('BLUE');
+    embed.setDescription("**Preview** : " + g + "\n\n**Answer** : " + math.eval(g));
+    message.channel.send({embed});
 
+      }catch(e){
+        console.error(e)
+        message.channel.send("Error vaule was not a solvable problem")
+        } 
+      }
+});
 
                 bot.on('message' , message => {
                     let tosend = ['```xl', prefix + 'join : "Join Voice channel of msg sender"',	prefix + 'add : "Add a valid youtube link to the queue"', prefix + 'queue : "Shows the current queue, up to 15 songs shown."', prefix + 'play : "Play the music queue if already joined to a voice channel"', '', 'the following commands only function while the play command is running:'.toUpperCase(), prefix + 'pause : "pauses the music"',	prefix + 'resume : "resumes the music"', prefix + 'skip : "skips the playing song"', prefix + 'time : "Shows the playtime of the song."',	'volume+(+++) : "increases volume by 2%/+"',	'volume-(---) : "decreases volume by 2%/-"',	'```'];
