@@ -683,11 +683,11 @@ var talkbot = new cleverbot(process.env.USERAPI,process.env.KEYAPI);
                     
                     bot.on('ready', () => {
                         console.log('Abuse Bot on')
-			bot.user.setPresence({game: {name: "over the puppies | -help", type: 'WATCHING'}})
+			bot.user.setPresence({game: {name: "over the puppies", type: 'WATCHING'}})
                         var gamez = ['over ' + bot.guilds.size + " Servers", prefix + "help || " + prefix + 'invite'];
                         let count = 0;
                         function oof(){
-                        bot.user.setPresence({game: {name: "over the puppies | -help", type: 'WATCHING'}});
+                        bot.user.setPresence({game: {name: "over the puppies", type: 'WATCHING'}});
                         }
                         setInterval(oof, 3600000);
                         });
