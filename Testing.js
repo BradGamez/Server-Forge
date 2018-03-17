@@ -93,7 +93,7 @@ bot.on('message', (message) =>{
     }
     if(message.content.toLowerCase() == prefix + "invite mobile"){
         message.author.createDM()
-        message.author.sendMessage('BradGamez Corporation : <https://discord.gg/ZzhXzzd>\nBot Invite : <https://discordapp.com/oauth2/authorize?client_id=368486558346772480&scope=bot&permissions=8>\nBradGamez Corporation Website : <https://bradgamezcorporation.weebly.com>')
+        message.author.sendMessage('Abuse Corporation : <https://discord.gg/ZzhXzzd>\nBot Invite : <https://discordapp.com/oauth2/authorize?client_id=368486558346772480&scope=bot&permissions=8>\nAbuse Corporation Website : <https://abusecorporation.weebly.com>')
         message.channel.sendMessage("A DM has been sent to " + message.author + " with Invite Information")
     }   
     if(message.content.toLowerCase() == prefix + "invite mobile" || message.content.toLowerCase() == prefix + "invite"){
@@ -559,7 +559,7 @@ bot.on('message', message => {
                         var embed = new Discord.RichEmbed();
                         embed.setTitle("Invite")
                         embed.setColor("BLUE")
-                        embed.setDescription('[Offical Abuse Discord](https://discord.gg/ZzhXzzd)\n[Bot Invite](https://discordapp.com/oauth2/authorize?client_id=368486558346772480&scope=bot&permissions=8)\n[Offical Abuse Website](https://bradgamezcorporation.weebly.com/)')
+                        embed.setDescription('[Offical Abuse Discord](https://discord.gg/ZzhXzzd)\n[Bot Invite](https://discordapp.com/oauth2/authorize?client_id=368486558346772480&scope=bot&permissions=8)\n[Offical Abuse Website](https://abusecorporation.weebly.com/)')
                         embed.setTimestamp()
                         message.channel.send({embed}); return;
                     }});
