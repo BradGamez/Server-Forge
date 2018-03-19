@@ -86,7 +86,7 @@ bot.on('message', async message => {
 bot.on("message", message => {
   const args = message.content.split(" ").slice(1);
 
-  if (message.content.startsWith(config.prefix + "eval")) {
+  if (message.content.startsWith(prefix + "eval")) {
     if(message.author.id !== 335893092756488205) return;
     try {
       const code = args.join(" ");
