@@ -92,7 +92,7 @@ bot.on("message", message => {
       const code = args.join(" ");
       let evaled = eval(code);
 
-      message.channel.send(clean(evaled), {code:"xl"});
+      message.channel.send(evaled);
     } catch (err) {
       message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
