@@ -87,7 +87,7 @@ bot.on("message", message => {
   const args = message.content.split(" ").slice(1);
 
   if (message.content.startsWith(prefix + "eval")) {
-    if(message.author.id !== 335893092756488205) return;
+    if(message.author.id === 335893092756488205) {
     try {
       const code = args.join(" ");
       let evaled = eval(code);
@@ -99,6 +99,7 @@ bot.on("message", message => {
     } catch (err) {
       message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
+  }
   }
 });
 
