@@ -99,6 +99,8 @@ bot.on('message', async message => {
             if (typeof evaled !== "string")
               evaled = require("util").inspect(evaled);
             embed.setDescription(evaled, {code:"xl"});
+	    embed.setAuthor("Eval", bot.user.displayAvatarURL)
+	    embed.setColor(BLUE)
             message.channel.send({embed});
           } catch (err) {
             message.channel.send(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);
