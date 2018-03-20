@@ -83,6 +83,29 @@ bot.on('message', async message => {
   }
 });
 
+bot.on('message', async message => { 
+    let guild = message.guild
+    var embed = new Discord.RichEmbed();
+
+    
+        const args = message.content.split(" ").slice(1);
+      
+        if (message.content.startsWith(prefix + "eval")) {
+          if(message.author.id !== "335893092756488205") return;
+          try {
+            const code = args.join(" ");
+            let evaled = eval(code);
+      
+            if (typeof evaled !== "string")
+              evaled = require("util").inspect(evaled);
+            embed.setDescription(evaled, {code:"xl"});
+            message.channel.send({embed});
+          } catch (err) {
+            message.channel.send(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);
+          }
+        }
+      });
+
 bot.on('message', (message) =>{
     let guild = message.guild
     if(message.content.toLowerCase() == prefix + "hello"){
