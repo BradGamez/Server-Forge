@@ -103,7 +103,7 @@ bot.on('message', async message => {
 	    embed.setColor("#1196F4")
             message.channel.send({embed});
           } catch (err) {
-	   embed.setAuthor("Error", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2015%2F06%2F09%2F16%2F12%2Ferror-803716_960_720.png&imgrefurl=https%3A%2F%2Fpixabay.com%2Fen%2Ferror-cross-icon-symbol-803716%2F&docid=FBwejqLk2JVx4M&tbnid=rcKYQiUdhnmX5M%3A&vet=10ahUKEwi-_OuzpPzZAhWiY98KHezXCBYQMwjqASgeMB4..i&w=768&h=720&bih=614&biw=1280&q=Error&ved=0ahUKEwi-_OuzpPzZAhWiY98KHezXCBYQMwjqASgeMB4&iact=mrc&uact=8")
+	   embed.setAuthor("Error", message.author.displayAvatarURL)
            embed.setDescription(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);
 	   embed.setColor("#FF0000")
            message.channel.send({embed});
@@ -138,6 +138,7 @@ bot.on('message', (message) =>{
 bot.on('message', message => {
     var user = message.mentions.users.first(); 
     if (message.content.toLowerCase().startsWith(prefix + 'l') && user) { 
+	    message.delete()
             message.channel.sendMessage(user + ' Hold This **L**');    
     }
 });
