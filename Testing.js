@@ -101,9 +101,13 @@ bot.on('message', async message => {
             embed.setDescription(evaled, {code:"xl"});
 	    embed.setAuthor("Eval", bot.user.displayAvatarURL)
 	    embed.setColor("#1196F4")
-            message.channel.send({embed});
+            message.channel.send({embed}, {split: {maxLength: ''}});
           } catch (err) {
-            message.channel.send(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);
+	   embed.setAuthor("Error", bot.user.displayAvatarURL)
+           embed.setDescription(`\`ERROR\` \`\`\`xl\n${err}\n\`\`\``);
+	   embed.setColor("#FF0000")
+           message.channel.send({embed}, {split: {maxLength: ''}});
+
           }
         }
       });
