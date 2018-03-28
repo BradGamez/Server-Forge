@@ -137,7 +137,7 @@ bot.on('message', (message) =>{
 
 bot.on('message', message => {
     var user = message.mentions.users.first(); 
-    if (message.content.toLowerCase().startsWith(prefix + 'l') && user) { 
+    if (message.content.toLowerCase() === prefix + 'l' && user) { 
 	    message.delete()
             message.channel.sendMessage(user + ' Hold This **L**');    
     }
