@@ -1005,7 +1005,7 @@ bot.on('message', message => {
 
                                 bot.on('ready', () => {
                                     function oof(){
-                                        bot.channels.get(config.autochannelid).send("**Check out our website**\n<https://bradgamezcorporation.weebly.com>")
+                                        bot.channels.get(config.autochannelid).send("**Check out our website**\n<https://abusecorporation.weebly.com>")
                                     
                                     } 
         
