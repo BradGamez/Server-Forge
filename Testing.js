@@ -17,7 +17,7 @@ bot.on('message', message => {
       if (message.author.bot) return;
       embed.setTitle('Partnerships')
       embed.setColor('BLUE');
-      embed.setDescription('**#1 Partner :first_place:**\n[TMG Network](https://discord.gg/DK8WW8c)');
+      embed.setDescription('**#1 Partner :first_place:**\n[TMG Network](https://discord.gg/DK8WW8c)\n**#2 Partner :second_place:**\n[CubeX](https://discord.gg/2b73DT3)');
       embed.setFooter('Join Offical Abuse Discord for partnership info. Link found by doing -invite')
     message.channel.send({embed});
   }
