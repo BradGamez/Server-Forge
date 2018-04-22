@@ -639,11 +639,12 @@ bot.on('message', message => {
                         var embed = new Discord.RichEmbed();
                         if (welcome && log){
                         embed.setColor('GREEN')
+			embed.setAuthor(`Welcome`,member.user.displayAvatarURL)
                         embed.setDescription('Welcome ' + member.user.username + ' to ' + guild.name)
                         bot.channels.get(welcome.id).send({embed});
 
                         embed.setColor('GREEN')
-                        embed.setTitle('User Joined')
+                        embed.setAuthor('User Joined',member.user.displayAvatarURL)
                         embed.setDescription(member.user + ' Has Joined The Guild.') 
                         embed.setFooter('Total Members : ' + guild.memberCount)
                         embed.setTimestamp();   
@@ -657,11 +658,12 @@ bot.on('message', message => {
                         var embed = new Discord.RichEmbed();
                         if (welcome && log){                            
                         embed.setColor('RED')
+			embed.setAuthor(`GoodBye`,member.user.displayAvatarURL)
                         embed.setDescription('GoodBye ' + member.user.username + ' You Will Be Missed.')
                         bot.channels.get(welcome.id).send({embed});
 
                         embed.setColor('RED')
-                        embed.setTitle('User Left')
+                        embed.setAuthor('User Left',member.user.displayAvatarURL)
                         embed.setDescription(member.user + ' Has Left The Guild.')  
                         embed.setFooter('Total Members : ' + guild.memberCount)  
                         embed.setTimestamp();
