@@ -45,7 +45,7 @@ client.on('reconnecting', () => console.log('I am reconnecting now!'));
 
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
-
+	var embed = new Discord.RichEmbed()
 	if (!msg.content.startsWith(PREFIX)) return undefined;
 
 
